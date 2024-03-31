@@ -6,6 +6,17 @@ pipeline {
                 sh 'echo "hello word"'   
             }
         }
+         stage ("switch dir to terraform plan "){
+          steps{
+                sh 'terraform fmt'
+                }   
+          }
+         stage ("switch dir to terraform plan "){
+          steps{
+                sh 'terraform init'
+                }   
+          }
+
         stage ("switch dir to terraform plan "){
           steps{
                 sh 'terraform plan'
