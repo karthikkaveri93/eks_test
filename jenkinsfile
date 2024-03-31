@@ -1,0 +1,22 @@
+pipeline {
+    agent any 
+    stages{
+        stage("scm checkout") {
+            steps {
+                sh 'echo "hello word"'   
+            }
+        }
+        stage ("switch dir to terraform plan "){
+          steps{
+                sh 'terraform plan'
+                }   
+          }
+        
+          stage ("terraform apply  ") {
+          steps{
+            sh 'terraform apply'
+          }
+        }
+        
+    }
+}
